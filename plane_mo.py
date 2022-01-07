@@ -29,7 +29,7 @@ class Observer:
         from bokeh.models import ColumnDataSource, LabelSet
         from bokeh.models import PanTool, WheelZoomTool, ResetTool, SaveTool, CrosshairTool
         from bokeh.models.annotations import Label
-        from bokeh.plotting import figure, show, save
+        from bokeh.plotting import figure, show, save, curdoc
         from bokeh.palettes import Plasma, Viridis, Category20
 
         for sy in self.__objects:
@@ -84,7 +84,8 @@ class Observer:
                 fig.circle(x=lx, y=ly, color=Category20[len(lx)], radius=sz, alpha=.5)
 
                 # Show plot
-                show(fig)
+                # save(fig)
+                curdoc().add_root(fig)
 
     def info(self):
         for sy in self.__objects:
