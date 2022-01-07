@@ -84,7 +84,7 @@ class Observer:
                 fig.circle(x=lx, y=ly, color=Category20[len(lx)], radius=sz, alpha=.5)
 
                 # Show plot
-                save(fig)
+                show(fig)
 
     def info(self):
         for sy in self.__objects:
